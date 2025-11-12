@@ -362,19 +362,13 @@ function getChampionImage(champ) {
   const customChamps = [
     "Aurora", "Naafiri", "Akshan", "Hwei", "K'Sante", 
     "Briar", "Mel", "Smolder", "Ambessa", "Yuumi", "Yunara",
-    "Cho'Gath", "Kha'Zix" // newly added custom PNGs
+    "Cho'Gath", "Kha'Zix"
   ];
 
-  // Map tricky names to exact filenames
-  const fileMap = {
-    "K’Sante": "K'Sante",  // curly apostrophe → straight
-    "Cho’Gath": "Cho'Gath",
-    "Kha’Zix": "Kha'Zix"
-  };
-
-  const fileName = fileMap[champ] || champ; // use mapping if exists, else champ name
-
-  if(customChamps.includes(fileName)) return `custom_champs/${fileName}.png`;
+  // Normalize apostrophes and curly quotes to straight apostrophe
+  const safeName = champ.replace(/[’‘]/g, "'"); // replace curly ’ with straight '
+  
+  if(customChamps.includes(safeName)) return `custom_champs/${safeName}.png`;
 
   return `https://ddragon.leagueoflegends.com/cdn/13.22.1/img/champion/${toDataDragonKey(champ)}.png`;
 }
