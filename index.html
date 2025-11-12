@@ -110,28 +110,32 @@
 </div>
 <script>
 const champions = [
-  "Aatrox","Ahri","Akali","Alistar","Amumu","Anivia","Annie","Aphelios","Ashe","Aurelion Sol",
-  "Azir","Bard","Bel'Veth","Blitzcrank","Brand","Braum","Caitlyn","Camille","Cassiopeia","Cho'Gath",
-  "Corki","Darius","Diana","Dr. Mundo","Draven","Ekko","Elise","Evelynn","Ezreal","Fiddlesticks",
-  "Fiora","Fizz","Galio","Gangplank","Garen","Gnar","Gragas","Graves","Gwen","Hecarim",
-  "Heimerdinger","Illaoi","Irelia","Ivern","Janna","Jarvan IV","Jax","Jayce","Jhin","Jinx",
-  "Kai'Sa","Kalista","Karma","Karthus","Kassadin","Katarina","Kayle","Kayn","Kennen","Kha'Zix",
-  "Kindred","Kled","Kog'Maw","LeBlanc","Lee Sin","Leona","Lillia","Lissandra","Lucian","Lulu",
-  "Lux","Malphite","Malzahar","Maokai","Master Yi","Mel","Miss Fortune","Mordekaiser","Morgana","Nami","Nasus",
-  "Nautilus","Neeko","Nidalee","Nilah","Nocturne","Nunu & Willump","Olaf","Orianna","Ornn","Pantheon",
-  "Poppy","Pyke","Qiyana","Quinn","Rakan","Rammus","Rek'Sai","Rell","Renata Glasc","Renekton",
-  "Rengar","Riven","Rumble","Ryze","Samira","Sejuani","Senna","Seraphine","Sett","Shaco",
-  "Shen","Shyvana","Singed","Sion","Sivir","Skarner","Smolder","Sona","Soraka","Swain","Sylas",
-  "Syndra","Tahm Kench","Taliyah","Talon","Taric","Teemo","Thresh","Tristana","Trundle","Tryndamere",
-  "Twisted Fate","Twitch","Udyr","Urgot","Varus","Vayne","Veigar","Vel'Koz","Vex","Vi",
-  "Viego","Viktor","Vladimir","Volibear","Warwick","Wukong","Xayah","Xerath","Xin Zhao","Yasuo",
-  "Yone","Yorick","Yuumi","Yunara","Zac","Zed","Zeri","Ziggs","Zilean","Zoe","Zyra"
+  "Aatrox","Ahri","Akali","Akshan","Ambessa","Alistar","Amumu","Anivia","Annie","Aphelios",
+  "Ashe","Aurelion Sol","Aurora","Azir","Bard","Bel'Veth","Blitzcrank","Brand","Briar","Braum",
+  "Caitlyn","Camille","Cassiopeia","Cho'Gath","Corki","Darius","Diana","Dr. Mundo","Draven","Ekko",
+  "Elise","Evelynn","Ezreal","Fiddlesticks","Fiora","Fizz","Galio","Gangplank","Garen","Gnar",
+  "Gragas","Graves","Gwen","Hecarim","Heimerdinger","Hwei","Illaoi","Irelia","Ivern","Janna",
+  "Jarvan IV","Jax","Jayce","Jhin","Jinx","Kai'Sa","Kalista","Karma","Karthus","Kassadin",
+  "Katarina","Kayle","Kayn","Kha'Zix","Kindred","Kled","K’Sante","Kog'Maw","LeBlanc","Lee Sin",
+  "Leona","Lillia","Lissandra","Lucian","Lulu","Lux","Malphite","Malzahar","Maokai","Master Yi",
+  "Mel","Miss Fortune","Mordekaiser","Morgana","Nami","Nasus","Naafiri","Nautilus","Neeko",
+  "Nidalee","Nilah","Nocturne","Nunu & Willump","Olaf","Orianna","Ornn","Pantheon","Poppy","Pyke",
+  "Qiyana","Quinn","Rakan","Rammus","Rek'Sai","Rell","Renata Glasc","Renekton","Rengar","Riven",
+  "Rumble","Ryze","Samira","Sejuani","Senna","Seraphine","Sett","Shaco","Shen","Shyvana","Singed",
+  "Sion","Sivir","Skarner","Smolder","Sona","Soraka","Swain","Sylas","Syndra","Tahm Kench",
+  "Taliyah","Talon","Taric","Teemo","Thresh","Tristana","Trundle","Tryndamere","Twisted Fate",
+  "Twitch","Udyr","Urgot","Varus","Vayne","Veigar","Vel'Koz","Vex","Vi","Viego","Viktor",
+  "Vladimir","Volibear","Warwick","Wukong","Xayah","Xerath","Xin Zhao","Yasuo","Yone","Yorick",
+  "Yuumi","Yunara","Zac","Zed","Zeri","Ziggs","Zilean","Zoe","Zyra"
 ];
+
 
 const championRoles = {
   "Aatrox":["Tank","ADC/Auto-Attack"],
   "Ahri":["Burst/Assassin","Mage/AP"],
   "Akali":["Burst/Assassin"],
+  "Akshan":["ADC/Auto-Attack","Burst/Assassin"],
+  "Ambessa":["Burst/Assassin","Mage/AP"],
   "Alistar":["Tank","Healer/Support"],
   "Amumu":["Tank","Mage/AP"],
   "Anivia":["Mage/AP","Poke"],
@@ -139,11 +143,13 @@ const championRoles = {
   "Aphelios":["ADC/Auto-Attack"],
   "Ashe":["Poke","ADC/Auto-Attack"],
   "Aurelion Sol":["Mage/AP","Poke"],
+  "Aurora":["Mage/AP"],
   "Azir":["Mage/AP","ADC/Auto-Attack"],
   "Bard":["Healer/Support"],
   "Bel'Veth":["ADC/Auto-Attack"],
   "Blitzcrank":["Tank","Healer/Support"],
   "Brand":["Mage/AP","Poke"],
+  "Briar":["Burst/Assassin"],
   "Braum":["Tank","Healer/Support"],
   "Caitlyn":["ADC/Auto-Attack","Poke"],
   "Camille":["Burst/Assassin","Tank"],
@@ -170,6 +176,7 @@ const championRoles = {
   "Gwen":["Burst/Assassin","ADC/Auto-Attack"],
   "Hecarim":["Tank","Burst/Assassin"],
   "Heimerdinger":["Mage/AP","Poke"],
+  "Hwei":["Mage/AP"],
   "Illaoi":["Tank","Burst/Assassin"],
   "Irelia":["Burst/Assassin","ADC/Auto-Attack"],
   "Ivern":["Healer/Support"],
@@ -187,10 +194,10 @@ const championRoles = {
   "Katarina":["Burst/Assassin"],
   "Kayle":["ADC/Auto-Attack","Healer/Support"],
   "Kayn":["Burst/Assassin"],
-  "Kennen":["Mage/AP","Burst/Assassin","Poke"],
   "Kha'Zix":["Burst/Assassin"],
   "Kindred":["ADC/Auto-Attack"],
   "Kled":["Tank","Burst/Assassin"],
+  "K’Sante":["Tank","Burst/Assassin"],
   "Kog'Maw":["ADC/Auto-Attack"],
   "LeBlanc":["Burst/Assassin","Mage/AP"],
   "Lee Sin":["Burst/Assassin","Tank"],
@@ -210,6 +217,7 @@ const championRoles = {
   "Morgana":["Healer/Support","Mage/AP"],
   "Nami":["Healer/Support"],
   "Nasus":["Tank","ADC/Auto-Attack"],
+  "Naafiri":["Burst/Assassin"],
   "Nautilus":["Tank","Healer/Support"],
   "Neeko":["Mage/AP","Burst/Assassin"],
   "Nidalee":["Burst/Assassin","Poke"],
@@ -327,13 +335,36 @@ function suggestItemSet(selectedEnemies) {
 // keep the toDataDragonKey function from before
 function toDataDragonKey(name){
   const special = {
-    "Kha'Zix":"KhaZix","Cho'Gath":"ChoGath","Kai'Sa":"Kaisa","LeBlanc":"Leblanc","Nunu & Willump":"Nunu",
-    "Dr. Mundo":"DrMundo","Rek'Sai":"RekSai","Vel'Koz":"Velkoz","Jarvan IV":"JarvanIV","Renata Glasc":"Renata",
-    "Miss Fortune":"MissFortune","Master Yi":"MasterYi","Tahm Kench":"TahmKench","Xin Zhao":"XinZhao",
-    "Aurelion Sol":"AurelionSol","Bel'Veth":"Belveth"
+    "Kha'Zix":"KhaZix",
+    "Cho'Gath":"ChoGath",
+    "Kai'Sa":"Kaisa",
+    "LeBlanc":"Leblanc",
+    "Nunu & Willump":"Nunu",
+    "Dr. Mundo":"DrMundo",
+    "Rek'Sai":"RekSai",
+    "Vel'Koz":"Velkoz",
+    "Jarvan IV":"JarvanIV",
+    "Renata Glasc":"Renata",
+    "Miss Fortune":"MissFortune",
+    "Master Yi":"MasterYi",
+    "Tahm Kench":"TahmKench",
+    "Xin Zhao":"XinZhao",
+    "Aurelion Sol":"AurelionSol",
+    "Bel'Veth":"Belveth",
+    "Wukong":"MonkeyKing" // add Wukong mapping
   };
   if(special[name]) return special[name];
   return name.split(/[\s'&.]+/).map(w=>w.charAt(0).toUpperCase()+w.slice(1).replace(/[^a-zA-Z0-9]/g,"")).join('');
+}
+
+// NEW FUNCTION: get image URL for champions, including custom ones
+function getChampionImage(champ) {
+  const customChamps = [
+    "Aurora", "Naafiri", "Akshan", "Hwei", "K’Sante", 
+    "Briar", "Mel", "Smolder", "Ambessa", "Yuumi", "Yunara"
+  ]; // all your custom champs
+  if(customChamps.includes(champ)) return `custom_champs/${champ}.png`; // path to your uploaded images
+  return `https://ddragon.leagueoflegends.com/cdn/13.22.1/img/champion/${toDataDragonKey(champ)}.png`;
 }
 </script>
 <script>
@@ -351,7 +382,8 @@ function renderGrid(){
   champions.forEach(champ=>{
     const tile = document.createElement("div");
     tile.className="champTile";
-    tile.innerHTML = `<img class="champImg" src="https://ddragon.leagueoflegends.com/cdn/13.22.1/img/champion/${toDataDragonKey(champ)}.png" alt="${champ}"><div class="champName">${champ}</div>`;
+    tile.innerHTML = `<img class="champImg" src="${getChampionImage(champ)}" alt="${champ}"><div class="champName">${champ}</div>`;
+
     tile.addEventListener("click",()=>{
       if(selected.includes(champ)){
         selected = selected.filter(c=>c!==champ);
@@ -393,3 +425,4 @@ renderGrid();
 </script>
 </body>
 </html>
+
