@@ -359,16 +359,27 @@ function toDataDragonKey(name){
 
 // NEW FUNCTION: get image URL for champions, including custom ones
 function getChampionImage(champ) {
-  const customChamps = [
-    "Aurora", "Naafiri", "Akshan", "Hwei", "K'Sante", 
-    "Briar", "Mel", "Smolder", "Ambessa", "Yuumi", "Yunara",
-    "Cho'Gath", "Kha'Zix"
-  ];
+  // Map champion names to the exact PNG filename
+  const fileMap = {
+    "K’Sante": "K'Sante",
+    "K'Sante": "K'Sante",
+    "Cho'Gath": "Cho'Gath",
+    "Cho’Gath": "Cho'Gath",
+    "Kha'Zix": "Kha'Zix",
+    "Kha’Zix": "Kha'Zix",
+    "Aurora": "Aurora",
+    "Naafiri": "Naafiri",
+    "Akshan": "Akshan",
+    "Hwei": "Hwei",
+    "Briar": "Briar",
+    "Mel": "Mel",
+    "Smolder": "Smolder",
+    "Ambessa": "Ambessa",
+    "Yuumi": "Yuumi",
+    "Yunara": "Yunara"
+  };
 
-  // Normalize apostrophes and curly quotes to straight apostrophe
-  const safeName = champ.replace(/[’‘]/g, "'"); // replace curly ’ with straight '
-  
-  if(customChamps.includes(safeName)) return `custom_champs/${safeName}.png`;
+  if(fileMap[champ]) return `custom_champs/${fileMap[champ]}.png`;
 
   return `https://ddragon.leagueoflegends.com/cdn/13.22.1/img/champion/${toDataDragonKey(champ)}.png`;
 }
