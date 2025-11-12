@@ -366,6 +366,7 @@ function getChampionImage(champ) {
   if(customChamps.includes(champ)) return `custom_champs/${champ}.png`; // path to your uploaded images
   return `https://ddragon.leagueoflegends.com/cdn/13.22.1/img/champion/${toDataDragonKey(champ)}.png`;
 }
+
 </script>
 <script>
 const grid = document.getElementById("champGrid");
@@ -425,4 +426,3 @@ renderGrid();
 </script>
 </body>
 </html>
-
